@@ -58,8 +58,8 @@ export const BentoCard = ({
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.6,
-        delay: index * 0.15, // delay antar grid biar muncul berurutan
+        duration: 1,
+        delay: index * 10, // delay antar grid biar muncul berurutan
         ease: "easeOut",
       },
     },

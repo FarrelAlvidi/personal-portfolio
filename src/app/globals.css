@@ -11,8 +11,9 @@
 html,
 body {
   background-color: #000;
-  font-family: inter, sans-serif;
+  font-family: "Satoshi", sans-serif;
   --font-pinyon: ${pinyon.style};
+  --font-Hatton: ${hatton.style};
   color: white;
   padding: 0;
   margin: 0;
@@ -39,4 +40,37 @@ body {
 }
 .font-zalando {
   font-family: var(--font-zalando);
+}
+.font-Hatton {
+  font-family: "Hatton", sans-serif; ;
+}
+@font-face {
+  font-family: "Hatton";
+  src: url(../fonts/PP\ Hatton\ Ultralight\ 200.otf);
+  font-weight: light;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url(../fonts/Satoshi-Regular.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url(../fonts/Satoshi-Bold.otf) format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url(../fonts/Satoshi-Black.otf) format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chillax";
+  src: url(../fonts/Chillax-Regular.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }

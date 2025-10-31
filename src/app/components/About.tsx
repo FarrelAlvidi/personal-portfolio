@@ -1,7 +1,11 @@
 "use client";
+// import { Bento } from "@/components/ui/Bento";
 import { useEffect } from "react";
 import gsap from "gsap";
+import { motion } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextReveal } from "@/components/ui/TextReveal";
+import { Bento } from "@/components/ui/Bento";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,18 +14,18 @@ const About = () => {
     // pastikan animasi hanya dijalankan di browser
     gsap.fromTo(
       ".title",
-      { opacity: 0, y: 100, rotate: -10 },
+      { opacity: 0, y: 100 },
       {
         opacity: 1,
         y: 0,
-        rotate: 0,
         duration: 2,
         ease: "power3.out",
         scrollTrigger: {
           trigger: ".title",
-          start: "top 60%",
+          start: "top 80%",
           end: "top 30%",
-          scrub: 1, 
+          scrub: 1,
+          markers: true,
           toggleActions: "play reverse play reverse",
         },
       }
@@ -33,12 +37,15 @@ const About = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center max-w-6xl mx-auto px-6">
-      <h2 className="title text-5xl md:text-6xl font-bold text-center text-white leading-snug">
-        Hi, My name is <span className="text-white font-normal font-pinyon">Portfolio</span>.{" "}
-        <br />A Software Engineer student from{" "}
-        <span className="text-indigo-400">SMK Informatika Pesat</span>.
-      </h2>
+    <div className="min-h-screen mx-auto py-6 px-8  ">
+      <h1 className="text-[4rem] font-black title leading-[1.01">
+        <span className="text-sm mr-40">Yourwave </span>
+        Hello, my name is <span className="font-Hatton">Farrel Alvidi</span>, I'm a Software Developer and Front-end Engineer
+      </h1>
+      <div className="mx-auto px-20 mt-20">
+      <Bento />
+
+      </div>
     </div>
   );
 };

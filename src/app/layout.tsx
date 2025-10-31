@@ -16,6 +16,11 @@ const zalando = Zalando_Sans({
   subsets: ["latin"],
   variable: "--font-zalando",
 });
+// const hatton = Hatton({
+//   weight: ["400"],
+//   subsets: ["latin"],
+//   variable: "--font-hatton",
+// });
 
 export const metadata: Metadata = {
   title: "Alv Portfolio",

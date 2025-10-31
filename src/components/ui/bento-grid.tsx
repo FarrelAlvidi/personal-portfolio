@@ -2,7 +2,7 @@
 
 import { ComponentPropsWithoutRef, ReactNode, useRef } from "react"
 import { ArrowRightIcon } from "@radix-ui/react-icons"
-import { motion, useInView } from "framer-motion"
+import { Transition, Variants, motion, useInView } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -48,26 +48,28 @@ export const BentoCard = ({
   index = 0,
   ...props
 }: BentoCardProps) => {
-  const ref = useRef(null)
+  // ✅ Type fix untuk ref:
+  const ref = useRef<HTMLDivElement | null>(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
-  const variants = {
+  const variants: Variants = {
     hidden: { opacity: 0, y: 40, scale: 0.98 },
-    visible: {
+    visible: (i: number = 0) => ({
       opacity: 1,
       y: 0,
       scale: 1,
       transition: {
-        duration: 1,
-        delay: index * 10, // delay antar grid biar muncul berurutan
+        duration: 0.6,
+        delay: i * 0.15,
         ease: "easeOut",
-      },
-    },
+      } as Transition,
+    }),
   }
 
   return (
     <motion.div
       ref={ref}
+      custom={index}
       variants={variants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}

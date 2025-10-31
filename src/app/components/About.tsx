@@ -25,7 +25,6 @@ const About = () => {
           start: "top 80%",
           end: "top 30%",
           scrub: 1,
-          markers: true,
           toggleActions: "play reverse play reverse",
         },
       }
@@ -37,12 +36,11 @@ const About = () => {
   }, []);
 
   return (
-    <div className="min-h-screen mx-auto py-6 px-8  ">
-      <h1 className="text-[4rem] font-black title leading-[1.01">
-        <span className="text-sm mr-40">Yourwave </span>
-        Hello, my name is <span className="font-Hatton">Farrel Alvidi</span>, I'm a Software Developer and Front-end Engineer
+    <div className="min-h-screen mx-auto py-6 px-20  ">
+      <h1 className="text-[3.8rem] font-black title indent-72 leading-[1.01">
+        Hello, my name is <span className="font-Hatton">Farrel Alvidi</span>, I'm a Software Developer and Front-end Engineer.
       </h1>
-      <div className="mx-auto px-20 mt-20">
+      <div className="mx-auto  mt-20">
       <Bento />
 
       </div>

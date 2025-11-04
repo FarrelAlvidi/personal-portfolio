@@ -47,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ReactLenis root>
+      {/* <ReactLenis root> */}
         <body
           className={`${pinyon.variable} ${dmmono.variable} ${zalando.variable} antialiased`}
         >
@@ -57,7 +57,7 @@ export default function RootLayout({
           </nav>
           {children}
         </body>
-      </ReactLenis>
+      {/* </ReactLenis> */}
     </html>
   );
 }

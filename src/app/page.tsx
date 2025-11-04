@@ -11,7 +11,9 @@ import Lenis from "lenis";
 
 export default function Home() {
   useEffect(() => {
-    const lenis = new Lenis();
+     const lenis = new Lenis({
+      duration: 3, // kehalusan scroll (semakin besar semakin lambat)
+    })
 
     function raf(time: number) {
       lenis.raf(time);

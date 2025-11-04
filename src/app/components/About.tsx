@@ -18,7 +18,7 @@ export default function About() {
       ease: "power2.out",
       scrollTrigger: {
         trigger: split.words,
-        start: "top 75%",
+        start: "top 80%",
         end: "bottom top",
         scrub: 2, // bikin animasinya halus dan lebih lama
         toggleActions: "play none none reverse",

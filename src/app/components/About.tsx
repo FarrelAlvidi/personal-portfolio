@@ -1,49 +1,40 @@
 "use client";
-import Bento from "@/components/ui/Bento";
 import { useEffect } from "react";
 import gsap from "gsap";
-import { motion } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TextReveal } from "@/components/ui/TextReveal";
+import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
-const About = () => {
+export default function About() {
   useEffect(() => {
-    // pastikan animasi hanya dijalankan di browser
-    gsap.fromTo(
-      ".title",
-      { opacity: 0, y: 100 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".title",
-          start: "top 80%",
-          end: "top 30%",
-          scrub: 1,
-          toggleActions: "play reverse play reverse",
-        },
-      }
-    );
+    const split = new SplitText(".title", { type: "words,chars" });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
+    gsap.from(split.words, {
+      opacity: 0,
+      x: 80,
+      stagger: 0.05,
+      duration: 2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: split.words,
+        start: "top 75%",
+        end: "bottom top",
+        scrub: 2, // bikin animasinya halus dan lebih lama
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    return () => split.revert();
   }, []);
 
   return (
-    <div className="h-[60vh] bg-[#050608] flex-center mx-auto py-6 md:px-10 px-6  ">
-      <h1 className="text-2xl md:text-[3.8rem] text-neutral-100 font-bold title lg:indent-72 leading-[1.01]">
-        Hello, my name is <span className="font-Hatton">Farrel Alvidi</span>, I'm a Software Developer and <span className="font-Hatton">Front-end Engineer</span>. Passionate about crafting seamless digital experiences through <span className="font-Hatton">code</span>.
+    <div className="min-h-screen flex-center text-center bg-[#050608] py-6 md:px-10 px-6">
+      <h1 className="text-3xl md:text-[3.2rem] md:w-1/2 text-neutral-200 font-md title ">
+        I am <span className="font-Hatton font-bold text-emerald-200">Farrel Alvidi</span>, a Software Developer and{" "}
+        <span className="font-Hatton font-bold text-emerald-200">Front-end Engineer</span>. Passionate about crafting seamless digital experiences through{" "}
+        <span className="font-Hatton font-bold text-emerald-200">code</span>.
       </h1>
-      {/* <div className="mx-auto mt-10  md:mt-20">
-        <Bento />
-      </div> */}
     </div>
   );
-};
-
-export default About;
+}

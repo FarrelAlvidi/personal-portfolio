@@ -8,6 +8,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import { useEffect } from "react";
 import Lenis from "lenis";
+import ProjectsPreview from "./components/ProjectsPreview";
 
 export default function Home() {
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function Home() {
     <div className="flex flex-col">
       <Hero />
       <About />
+      <ProjectsPreview />
     </div>
   );
 }

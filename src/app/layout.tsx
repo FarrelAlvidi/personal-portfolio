@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
-import { Pinyon_Script, Poppins, Zalando_Sans } from "next/font/google";
+import {
+  DM_Mono,
+  Pinyon_Script,
+  Poppins,
+  Zalando_Sans,
+} from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -15,6 +22,11 @@ const zalando = Zalando_Sans({
   weight: ["400"],
   subsets: ["latin"],
   variable: "--font-zalando",
+});
+const dmmono = DM_Mono({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-dmmono",
 });
 // const hatton = Hatton({
 //   weight: ["400"],
@@ -35,8 +47,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${pinyon.variable} ${zalando.variable} antialiased`}
+        className={`${pinyon.variable} ${dmmono.variable} ${zalando.variable} antialiased`}
       >
+      <nav>
+        <Header />
+        <Navbar />
+      </nav>
         {children}
       </body>
     </html>

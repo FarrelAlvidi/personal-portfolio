@@ -1,11 +1,10 @@
 "use client";
-// import { Bento } from "@/components/ui/Bento";
+import Bento from "@/components/ui/Bento";
 import { useEffect } from "react";
 import gsap from "gsap";
 import { motion } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextReveal } from "@/components/ui/TextReveal";
-import { Bento } from "@/components/ui/Bento";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,14 +35,13 @@ const About = () => {
   }, []);
 
   return (
-    <div className="min-h-screen mx-auto py-6 px-20  ">
-      <h1 className="text-[3.8rem] font-black title indent-72 leading-[1.01">
-        Hello, my name is <span className="font-Hatton">Farrel Alvidi</span>, I'm a Software Developer and Front-end Engineer.
+    <div className="h-[55vh] bg-[#050608] mx-auto py-6 md:px-16 px-6  ">
+      <h1 className="text-2xl md:text-[3.8rem] font-bold title md:indent-72 leading-[1.01">
+        Hello, my name is <span className="font-Hatton">Farrel Alvidi</span>, I'm a Software Developer and <span className="font-Hatton">Front-end Engineer</span>. Passionate about crafting seamless digital experiences through <span className="font-Hatton">code</span>.
       </h1>
-      <div className="mx-auto  mt-20">
-      <Bento />
-
-      </div>
+      {/* <div className="mx-auto mt-10  md:mt-20">
+        <Bento />
+      </div> */}
     </div>
   );
 };

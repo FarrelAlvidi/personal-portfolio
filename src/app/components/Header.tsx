@@ -26,7 +26,7 @@ const Header = () => {
       initial={{ opacity: 0, y: -100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.5 }}
-     className="fixed top-0 left-0 w-full px-10 py-6 flex justify-between items-center z-50">
+     className="fixed top-0 left-0 w-full px-6 lg:px-10 py-6 flex justify-between items-center z-50">
       <h1 className="text-lg text-white">My</h1>
       <p className="text-neutral-200 font-mono">{formattedTime}</p>
     </motion.header>

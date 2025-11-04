@@ -8,6 +8,7 @@ import {
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
+import { ReactLenis } from "@/lib/lenis";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -46,15 +47,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${pinyon.variable} ${dmmono.variable} ${zalando.variable} antialiased`}
-      >
-      <nav>
-        <Header />
-        <Navbar />
-      </nav>
-        {children}
-      </body>
+      <ReactLenis root>
+        <body
+          className={`${pinyon.variable} ${dmmono.variable} ${zalando.variable} antialiased`}
+        >
+          <nav>
+            <Header />
+            <Navbar />
+          </nav>
+          {children}
+        </body>
+      </ReactLenis>
     </html>
   );
 }

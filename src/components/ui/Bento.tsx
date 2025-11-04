@@ -141,13 +141,13 @@ const Bento = () => {
       {/* Picture */}
       <motion.div
         variants={itemVariants}
-        className="relative col-span-1 row-span-3 w-full [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] rounded-xl flex items-center justify-center text-white font-bold overflow-hidden"
+        className="relative col-span-1 row-span-2 w-full [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] rounded-xl flex items-center justify-center text-white font-bold overflow-hidden"
       >
         <Image
           src="/assets/myBini.jpg"
           alt="Picture"
           fill
-          className="rounded-xl object-cover"
+          className="rounded-xl w-full h-full object-cover"
         />
       </motion.div>
 

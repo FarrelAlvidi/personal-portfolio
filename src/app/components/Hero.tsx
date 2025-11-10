@@ -26,7 +26,7 @@ export const Hero = () => {
             Farrel Alvidi
           </motion.h1>
         </div>
-        {/* <motion.div
+        <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 0.5 }}
@@ -39,7 +39,7 @@ export const Hero = () => {
               Frontend Developer - Junior Web Developer - &nbsp;
             </ScrollVelocityRow>
           </ScrollVelocityContainer>
-        </motion.div> */}
+        </motion.div>
         
       </div>
     </>

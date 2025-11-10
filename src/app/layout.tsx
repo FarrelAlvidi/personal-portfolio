@@ -2,18 +2,12 @@ import type { Metadata } from "next";
 import {
   DM_Mono,
   Pinyon_Script,
-  Poppins,
   Zalando_Sans,
 } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import { ReactLenis } from "@/lib/lenis";
 
-const poppins = Poppins({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-});
 const pinyon = Pinyon_Script({
   weight: ["400"],
   subsets: ["latin"],

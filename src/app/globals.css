@@ -22,7 +22,8 @@ body {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth ;
-  overflow-x: hidden
+  overflow-x: hidden;
+  cursor: none;
 }
 
 

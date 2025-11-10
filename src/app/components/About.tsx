@@ -57,13 +57,13 @@ export default function About() {
   }, []);
 
   return (
-    <div className="relative py-20 items-center gap-18 lg:gap-28 flex flex-col lg:flex-row justify-between md:px-20 px-5 overflow-hidden">
+    <div id="about" className="relative py-20 items-center gap-18 lg:gap-28 flex flex-col lg:flex-row justify-between md:px-20 px-5 overflow-hidden">
       {/* Light effect di ujung atas */}
       <div className="absolute top-52 left-0 -translate-x-1/2 w-[800px] h-[400px] bg-white/15 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 flex flex-col gap-y-12 lg:gap-y-20 w-full lg:w-1/2">
-        <h2 className="title font-Hatton text-3xl lg:text-6xl font-medium">
-          I'm Farrel Alvidi, the person you're looking for.
+        <h2 className="title bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400  font-Hatton text-3xl lg:text-6xl font-medium">
+          I&apos;m Farrel Alvidi, the person you&apos;re looking for.
         </h2>
         <p className="text text-neutral-500">
           With a focus on problem solving with branding and design, I strive to
@@ -102,7 +102,7 @@ export default function About() {
 
       <div className="pic relative z-10">
         <img
-          src="/assets/myBini.jpg"
+          src="/assets/1.jpg"
           alt="Picture of the author"
           className="rounded-4xl lg:h-screen w-full shadow-lg"
         />

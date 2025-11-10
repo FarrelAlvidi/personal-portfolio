@@ -5,7 +5,6 @@ import {
   ScrollVelocityRow,
 } from "@/components/ui/scroll-based-velocity";
 import { motion } from "framer-motion";
-import { Instagram } from "lucide-react";
 import React from "react";
 
 

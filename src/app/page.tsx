@@ -54,9 +54,9 @@ export default function Home() {
       <ErrorBoundary>
         <About />
       </ErrorBoundary>
-      {/* <ErrorBoundary>
+      <ErrorBoundary>
         <ProjectsPreview />
-      </ErrorBoundary> */}
+      </ErrorBoundary>
       
       {/* <StickyCards /> */}
     </div>

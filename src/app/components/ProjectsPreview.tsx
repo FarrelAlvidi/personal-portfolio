@@ -43,7 +43,7 @@ const ProjectsPreview = () => {
       duration: 2,
       scrollTrigger : {
         trigger: ".titleWork",
-        start: "top 80%",
+        start: "top 90%",
         end: "top 40%",
         scrub: true,
         // markers: true,
@@ -56,12 +56,12 @@ const ProjectsPreview = () => {
       y: 200,
     }, {
       opacity: 1,
-      duration: 2,
+      duration: 4,
       y: 0,
       scrollTrigger: {
         trigger: ".grid",
         start: "top 80%",
-        end: "top 40%",
+        end: "top 60%",
         scrub: true,
         // markers: true,
       }
@@ -74,7 +74,7 @@ const ProjectsPreview = () => {
   return (
     <div className="container min-h-screen flex-center overflow-hidden p-8 mt-52 md:p-20">
       <div className="max-w-[1400px] mx-auto">
-        <h1 className="titleWork text-white text-5xl md:text-7xl font-bold mb-16 tracking-tight">
+        <h1 className="titleWork font-Hatton bg-gradient-to-r from-white via-neutral-400 to-neutral-800 bg-clip-text text-transparent text-5xl md:text-7xl font-bold mb-16 tracking-tight">
           RECENT WORK
         </h1>
         

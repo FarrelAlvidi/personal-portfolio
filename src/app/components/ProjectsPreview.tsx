@@ -63,7 +63,7 @@ const ProjectsPreview = () => {
         start: "top 80%",
         end: "top 30%",
         scrub: true,
-        markers: true,
+        // markers: true,
       }
     }
   )

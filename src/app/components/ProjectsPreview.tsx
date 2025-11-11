@@ -61,7 +61,7 @@ const ProjectsPreview = () => {
       scrollTrigger: {
         trigger: ".grid",
         start: "top 80%",
-        end: "top 30%",
+        end: "top 40%",
         scrub: true,
         // markers: true,
       }
@@ -72,7 +72,7 @@ const ProjectsPreview = () => {
 
 
   return (
-    <div className="container min-h-screen flex-center p-8 mt-52 md:p-20">
+    <div className="container min-h-screen flex-center overflow-hidden p-8 mt-52 md:p-20">
       <div className="max-w-[1400px] mx-auto">
         <h1 className="titleWork text-white text-5xl md:text-7xl font-bold mb-16 tracking-tight">
           RECENT WORK

@@ -2,9 +2,11 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
+import Image from "next/image";
+import { Spotlight } from "lucide-react";
+import SpotlightText from "@/components/ui/SpotlightText";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   useEffect(() => {
@@ -65,7 +67,8 @@ export default function About() {
         <h2 className="title bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400  font-Hatton text-3xl lg:text-6xl font-medium">
           I&apos;m Farrel Alvidi, the person you&apos;re looking for.
         </h2>
-        <p className="text text-neutral-500">
+        {/* Text Gelap */}
+        <SpotlightText className="text text-neutral-500" spotlightSize={50}>
           With a focus on problem solving with branding and design, I strive to
           infuse my work with a unique, emotive touch, intertwining my varied
           cultural roots with an astute appreciative eye for daring, new-age
@@ -73,7 +76,9 @@ export default function About() {
           components. My concepts and style encompasses a range of mediums,
           shaping engaging identities and commodities that connect with
           wide-range use cases and generate meaningful impact.
-        </p>
+        </SpotlightText>
+
+
         <div className="flex gap-x-32 mt-6">
           <div className="flex flex-col gap-5">
             <h4 className="font-zalando text-neutral-500 tracking-wider">
@@ -101,10 +106,15 @@ export default function About() {
       </div>
 
       <div className="pic relative z-10">
-        <img
+        <Image
           src="/assets/1.jpg"
           alt="Picture of the author"
-          className="rounded-4xl lg:h-screen w-full shadow-lg"
+          width={800}
+          height={1200}
+          className="rounded-4xl lg:h-screen w-full shadow-lg object-cover"
+          priority={false}
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
         />
       </div>
     </div>

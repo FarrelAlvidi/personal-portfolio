@@ -7,13 +7,14 @@ import { Hero } from "./components/Hero";
 import About from "./components/About";
 import ProjectsPreview from "./components/ProjectsPreview";
 import CustomCursor from "@/components/ui/CustomCursor";
+import { ErrorBoundary } from "@/components/shared/ErrorBoundary";
 
 export default function Home() {
   const scrollContainer = useRef<HTMLDivElement>(null);
 
   // 🔹 Lenis smooth scroll
   useEffect(() => {
-    const lenis = new Lenis({ duration: 2 });
+    const lenis = new Lenis({ duration: 3 });
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -39,9 +40,6 @@ export default function Home() {
 
   return (
     <div ref={scrollContainer} className="flex flex-col">
-      {/* <div className="cursor border-2 border-white h-12 flex-center w-12 rounded-full fixed z-50">
-        <div className="bg-white h-1 w-1 rounded-full m-auto"></div>
-      </div> */}
       <CustomCursor />
 
       <motion.div
@@ -49,9 +47,17 @@ export default function Home() {
         className="bg-neutral-400 h-1 z-50 w-full fixed top-0 left-0"
       />
 
-      <Hero />
-      <About />
-      <ProjectsPreview />
+      <ErrorBoundary>
+        <Hero />
+      </ErrorBoundary>
+      
+      <ErrorBoundary>
+        <About />
+      </ErrorBoundary>
+      {/* <ErrorBoundary>
+        <ProjectsPreview />
+      </ErrorBoundary> */}
+      
       {/* <StickyCards /> */}
     </div>
   );

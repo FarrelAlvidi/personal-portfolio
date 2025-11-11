@@ -107,7 +107,7 @@ export function MyDock() {
                     aria-label={item.label}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-12 rounded-full cursor-none"
                     )}
                   >
                     <item.icon className="size-4" />
@@ -129,7 +129,7 @@ export function MyDock() {
                     aria-label={social.name}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-12 rounded-full cursor-none"
                     )}
                   >
                     <social.icon className="size-4" />

@@ -1,0 +1,12 @@
+[
+    {
+        "title" : "Travel Website",
+        "description" : "A responsive travel website built with React and Tailwind CSS, featuring destination listings, user reviews, and booking functionality.",
+        "image" : "/assets/project-4.jpg"
+    },
+    {
+        "title" : "Portfolio Website",
+        "description" : "A portfolio website showcasing projects, skills, and experience, built with Next.js and styled with Tailwind CSS.",
+        "image" : "/assets/project-3.jpg"
+    }
+]

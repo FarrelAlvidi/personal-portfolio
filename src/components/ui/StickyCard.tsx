@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,7 +82,7 @@ const StickyCards = () => {
           key={i}
           className="sticky-card min-h-screen flex flex-col md:flex-row items-start justify-between gap-10 md:gap-x-[35%] bg-[#FAFAFA] text-black px-6 md:px-20 py-16"
         >
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <h1 className="text-5xl md:text-7xl font-black font-zalando mb-6">
               0{i + 1}
             </h1>
@@ -92,12 +93,13 @@ const StickyCards = () => {
               {project.title}
             </h2>
 
-            <img
+            <Image
               src={project.image}
               alt={project.title}
-              className="w-full md:w-[85%] object-cover shadow-lg mb-8"
               width={800}
               height={500}
+              className="w-full md:w-[85%] object-cover shadow-lg mb-8"
+              loading="lazy"
             />
 
             <p className="max-w-2xl text-base md:text-lg text-neutral-700 leading-relaxed text-center md:text-left">

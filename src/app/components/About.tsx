@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Spotlight } from "lucide-react";
 import SpotlightText from "@/components/ui/SpotlightText";
 import Magnet from "@/components/Magnet";
+import CurvedLoop from "@/components/CurvedLoop";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -60,7 +61,9 @@ export default function About() {
   }, []);
 
   return (
-    <div id="about" className="relative py-20 items-center gap-18 lg:gap-28 flex flex-col lg:flex-row justify-between md:px-20 px-5 overflow-hidden">
+<>
+    <div id="about" className="relative py-20  md:px-20 px-5">
+      <div className=" items-center gap-18 lg:gap-28  flex flex-col lg:flex-row justify-between  overflow-hidden">
       {/* Light effect di ujung atas */}
       <div className="absolute top-52 left-0 -translate-x-1/2 w-[800px] h-[400px] bg-white/15 rounded-full blur-[120px] pointer-events-none" />
 
@@ -118,6 +121,9 @@ export default function About() {
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
         />
       </Magnet>
+      </div>
+
     </div>
+</>
   );
 }

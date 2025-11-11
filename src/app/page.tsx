@@ -8,6 +8,7 @@ import About from "./components/About";
 import ProjectsPreview from "./components/ProjectsPreview";
 import CustomCursor from "@/components/ui/CustomCursor";
 import { ErrorBoundary } from "@/components/shared/ErrorBoundary";
+import CurvedLoop from "@/components/CurvedLoop";
 
 export default function Home() {
   const scrollContainer = useRef<HTMLDivElement>(null);
@@ -20,7 +21,7 @@ export default function Home() {
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
-    
+
     // Cleanup function
     return () => {
       lenis.destroy();
@@ -50,14 +51,22 @@ export default function Home() {
       <ErrorBoundary>
         <Hero />
       </ErrorBoundary>
-      
+
       <ErrorBoundary>
         <About />
       </ErrorBoundary>
+      <CurvedLoop
+        className="font-Hatton"
+        curveAmount={0}
+        speed={1}
+        interactive={false}
+        direction="right"
+        marqueeText="Frontend Developer ✦ UI/UX Enthusiast ✦ "
+      />
       <ErrorBoundary>
         <ProjectsPreview />
       </ErrorBoundary>
-      
+
       {/* <StickyCards /> */}
     </div>
   );

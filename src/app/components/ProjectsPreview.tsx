@@ -1,129 +1,152 @@
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { AnimatePresence, motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const projects = [
+  {
+    title: "Attendance System",
+    tools: "Laravel",
+    img: "/assets/project-7.png",
+    desc: "A website for an attendance system that allows users to track and manage attendance records efficiently.",
+    year: 2025,
+  },
+  {
+    title: "Pesat Discovery Day",
+    tools: "Tailwind CSS",
+    img: "/assets/project-3.jpg",
+    desc: "A website for an event that showcases innovative projects and ideas from students.",
+    year: 2024,
+  },
+  {
+    title: "Travel Website",
+    tools: "Native",
+    img: "/assets/project-4.jpg",
+    desc: "An application to manage library resources, track borrowed books, and handle user accounts efficiently.",
+    year: 2024,
+  },
+];
+
+interface Project {
+  title: string;
+  tools: string;
+  img: string;
+  desc: string;
+  year: number;
+}
+
+interface ModalProps {
+  onClose: () => void;
+  project: Project;
+}
+
+function Modal({ onClose, project }: ModalProps) {
+  return (
+    <motion.div
+      onClick={onClose}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="overlay fixed inset-0 flex items-center justify-center z-40 bg-white/10 backdrop-blur-sm"
+    >
+      <motion.div
+        className="p-8 bg-neutral-900 max-w-4xl w-full h-auto rounded-lg"
+        onClick={(e) => e.stopPropagation()}
+        initial={{ scale: 0.4, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ opacity: 0, scale: 0.4 }}
+        transition={{ type: "tween" }}
+      >
+        <div className="relative rounded-xl overflow-hidden mb-6 group">
+      <img
+        src={project.img}
+        alt={project.title}
+        className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/80 via-transparent to-transparent opacity-60"></div>
+    </div>
+        <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
+        <p className="text-lg text-neutral-400">{project.tools}</p>
+        <p className="text-sm text-neutral-500 mt-2">{project.year}</p>
+        <p className="mt-4 text-neutral-300">{project.desc}</p>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 const ProjectsPreview = () => {
-  const projects = [
-    {
-      title: "INGENUE",
-      subtitle: "Concept for an online women's clothing",
-      tags: ["UX/UI Design", "E-commerce"],
-      image: "/assets/project-1.jpg",
-    },
-    {
-      title: "SONY",
-      subtitle: "Corporate website",
-      tags: ["UX/UI Design", "Web Design"],
-      image: "/assets/project-2.jpg",
-    },
-    {
-      title: "THE IRISH TIMES",
-      subtitle: "News site",
-      tags: ["UX/UI Design", "News website"],
-      image: "/assets/project-3.jpg",
-    },
-    {
-      title: "EMPIRE",
-      subtitle: "Clubhouse website",
-      tags: ["Web Design", "Real estate"],
-      image: "/assets/project-4.jpg",
-    },
-  ];
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
   useEffect(() => {
     gsap.fromTo(
       ".titleWork",
       {
         opacity: 0,
-        x: -200,
+        y: -200,
       },
       {
         opacity: 1,
-        x: 0,
+        y: 0,
         duration: 2,
         scrollTrigger: {
           trigger: ".titleWork",
           start: "top 90%",
           end: "top 40%",
           scrub: true,
-          // markers: true,
-        },
-      }
-    );
-
-    gsap.fromTo(
-      ".grid",
-      {
-        opacity: 0,
-        y: 200,
-      },
-      {
-        opacity: 1,
-        duration: 4,
-        y: 0,
-        scrollTrigger: {
-          trigger: ".grid",
-          start: "top 80%",
-          end: "top 60%",
-          scrub: true,
-          // markers: true,
         },
       }
     );
   }, []);
 
   return (
-    <div id="projects" className=" min-h-screen overflow-hidden p-8   md:p-20 flex flex-col justify-center">
-      <h1 className="titleWork font-Hatton bg-gradient-to-r from-white via-neutral-400 to-neutral-800 bg-clip-text text-transparent text-5xl md:text-7xl font-bold mb-16 tracking-tight">
+    <div
+      id="projects"
+      className="bg-[#0A0A0A] min-h-screen overflow-hidden flex flex-col justify-center"
+    >
+      <div className="border-b border-neutral-800 pb-10">
+        <h1 className="titleWork px-10  bg-gradient-to-r from-white via-neutral-400 to-neutral-800 bg-clip-text text-transparent text-2xl md:text-3xl font-semibold text-center tracking-tight">
         RECENT WORK
       </h1>
-
-      <div   className="grid grid-cols-1 overflow-hidden w-full rounded-4xl md:grid-cols-2 gap-0 border-2 border-neutral-800">
-        {projects.map((project, index) => (
+      </div>
+      <div className="flex flex-col">
+        {projects.map((project, i) => (
           <div
-            key={index}
-            className={`bg-transparent p-8 md:p-12 border-neutral-800 ${
-              index % 2 === 0 ? "md:border-r-2" : ""
-            } ${
-              index < 2 ? "border-b-2" : ""
-            } hover:bg-neutral-900 transition-colors duration-300 group cursor-pointer`}
+            key={i}
+            onClick={() => setSelectedProject(project)}
+            className="hover:bg-neutral-900 bagian cursor-pointer duration-500 transition-all border-b border-neutral-800 w-full py-10 px-4 md:px-10"
           >
-            <div className="flex justify-between items-start mb-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-                {project.title}
+            {/* Desktop Layout */}
+            <div className="hidden md:grid grid-cols-3 items-center">
+              <h5 className="text-sm md:text-base text-left">{project.title}</h5>
+              <h2 className="text-4xl md:text-[4.8rem]  font-semibold text-center">
+                {project.tools}
               </h2>
-              <div className="flex gap-2">
-                {project.tags.map((tag, idx) => (
-                  <span
-                    key={idx}
-                    className="px-3 py-1 border border-neutral-300 rounded-full text-xs text-neutral-400"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              <h5 className="text-sm md:text-base text-right">{project.year}</h5>
             </div>
 
-            <p className="text-[#6d6d6d] mb-6 text-sm">{project.subtitle}</p>
-
-            <div
-              className={`w-full aspect-video overflow-hidden group-hover:scale-[1.02] transition-transform duration-300`}
-            >
-              <div className="w-full h-full flex items-center justify-center">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-full object-cover"
-                />
+            {/* Mobile Layout */}
+            <div className="md:hidden flex flex-col items-center gap-4">
+              <div className="flex justify-between w-full text-xs">
+                <span>{project.title}</span>
+                <span>{project.year}</span>
               </div>
+              <h2 className="text-5xl font-semibold text-center">{project.tools}</h2>
             </div>
           </div>
         ))}
       </div>
+
+      <AnimatePresence>
+        {selectedProject && (
+          <Modal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };

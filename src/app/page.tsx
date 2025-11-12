@@ -56,7 +56,7 @@ export default function Home() {
         <About />
       </ErrorBoundary>
       <CurvedLoop
-        className="font-Hatton"
+        className="font-Hatton bg-[#0A0A0A"
         curveAmount={0}
         speed={1}
         interactive={false}

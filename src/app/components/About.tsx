@@ -62,8 +62,8 @@ export default function About() {
 
   return (
 <>
-    <div id="about" className="relative py-20  md:px-20 px-5">
-      <div className=" items-center gap-18 lg:gap-28  flex flex-col lg:flex-row justify-between  overflow-hidden">
+    <div id="about" className="relative py-20 bg-[#0A0A0A] md:px-20 px-5">
+      <div className=" items-center gap-18 lg:gap-28 py-20 flex flex-col lg:flex-row justify-between  overflow-hidden">
       {/* Light effect di ujung atas */}
       <div className="absolute top-52 left-0 -translate-x-1/2 w-[800px] h-[400px] bg-white/15 rounded-full blur-[120px] pointer-events-none" />
 
@@ -109,7 +109,7 @@ export default function About() {
         </div>
       </div>
 
-      <Magnet padding={100} magnetStrength={10}  className="pic relative z-10 ">
+      <Magnet padding={100} magnetStrength={10}  className="pic relative z-20 ">
         <Image
           src="/assets/1.jpg"
           alt="Picture of the author"

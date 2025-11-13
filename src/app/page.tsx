@@ -45,7 +45,7 @@ export default function Home() {
 
       <motion.div
         style={{ scaleX, transformOrigin: "left" }}
-        className="bg-neutral-400 h-0.5 z-50 w-full fixed top-0 left-0"
+        className="bg-neutral-400 h-0.5 z-30 w-full fixed top-0 left-0"
       />
 
       <ErrorBoundary>
